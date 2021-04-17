@@ -1,0 +1,10 @@
+base
+linux
+nano
+doas
+linux-firmware
+openssh
+man-db
+man-pages
+texinfo
+networkmanager
