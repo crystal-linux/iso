@@ -46,3 +46,5 @@ mkinitcpio
 mkinitcpio-archiso
 openssh
 syslinux
+
+qtmares
