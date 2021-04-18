@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 
-iso_name="pearos-live"
-iso_label="PEAR_$(date +%Y%m)"
-iso_publisher="PearOS Linux <https://github.com/phoenix277yt/PearOS-arch>"
-iso_application="PearOS Live"
+iso_name="crystal-live"
+iso_label="CRYS_$(date +%Y%m)"
+iso_publisher="CrystalUX <https://github.com/CrystalUX-project"
+iso_application="CrystalUX Live"
 iso_version="$(date +%Y.%m.%d)"
 install_dir="arch"
 bootmodes=('bios.syslinux.mbr' 'bios.syslinux.eltorito' 'uefi-x64.systemd-boot.esp' 'uefi-x64.systemd-boot.eltorito')

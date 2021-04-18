@@ -2,10 +2,10 @@
 # This file is run via mkarchiso while chrooted as the new system
 echo "We're in the new system. :)"
 echo "Performing minor tweaks"
-sed -i 's/Arch/PearOS/g' /etc/issue
-sed -i 's/Arch/PearOS/g' /etc/arch-release
-sed -i 's/Arch/PearOS/g' /etc/os-release
-echo "PearLive" > /etc/hostname
+sed -i 's/Arch/CrystalUX/g' /etc/issue
+sed -i 's/Arch/CrystalUX/g' /etc/arch-release
+sed -i 's/Arch/CrystalUX/g' /etc/os-release
+echo "CrystalLive" > /etc/hostname
 #reflector --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
 echo "sudo reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist" >> /usr/bin/mirrorsetup
 chmod +x /usr/bin/mirrorsetup
