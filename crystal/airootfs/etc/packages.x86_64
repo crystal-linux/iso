@@ -39,12 +39,6 @@ dolphin
 tk
 tree
 
-pear-resources
-pear-skel
-pear-misc
-palamares
-pear-qtmares
-
 base
 cloud-init
 linux
@@ -52,3 +46,8 @@ mkinitcpio
 mkinitcpio-archiso
 openssh
 syslinux
+
+qtmares
+kde-skel
+kde-theme
+crystal-misc

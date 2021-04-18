@@ -16,3 +16,13 @@ chmod +x /usr/bin/mirrorsetup
 /usr/bin/usermod -p $(echo "pear" | openssl passwd -6 -stdin) root
 /usr/bin/chmod +x /home/carly/.xinitrc
 echo "Configured the 'carly' user. Exiting chroot."
+
+cat >> .bashrc << EOF
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  startx
+fi
+
+if [[ ! -f /etc/pacman.d/mirrorlist ]]; then
+  sudo reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
+fi
+EOF
