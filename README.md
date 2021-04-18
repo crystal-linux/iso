@@ -2,7 +2,7 @@
 Build the (new) Arch-based pear iso.
 
 ## How to Build:
-You will have to use Arch or Arch-Based distros to build this ISO File. Cause Arch Helps Arch LOL.
+You will have to use Arch or Arch-Based distros to build this ISO File.
 1. Install Dependencies
 2. Go to the project folder
 3. Run `./build_iso.sh`
