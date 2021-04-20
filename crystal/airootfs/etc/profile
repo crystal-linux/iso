@@ -1,1 +1,1 @@
-alias sudo="doas"
+#alias sudo="doas"

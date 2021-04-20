@@ -6,6 +6,7 @@ pacman-contrib
 nano
 doas
 linux-firmware
+neofetch
 
 plasma
 ark
