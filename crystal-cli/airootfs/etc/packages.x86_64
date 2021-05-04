@@ -14,7 +14,7 @@ mkinitcpio
 mkinitcpio-archiso
 openssh
 syslinux
-neofetch
 
 crystal-misc
 crystal-cli-boot
+neofetch
