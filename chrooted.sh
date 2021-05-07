@@ -10,12 +10,16 @@ echo "CrystalLive" > /etc/hostname
 #reflector --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
 echo "sudo reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist" >> /usr/bin/mirrorsetup
 chmod +x /usr/bin/mirrorsetup
-# We don't add carly until here so that our packages which change
+# We don't add crystal until here so that our packages which change
 # /etc/skel have been installed already
-/usr/bin/useradd -m carly
-/usr/bin/usermod -p $(echo "pear" | openssl passwd -6 -stdin) carly
-/usr/bin/usermod -p $(echo "pear" | openssl passwd -6 -stdin) root
-/usr/bin/chmod +x /home/carly/.xinitrc
-echo "menu" >> /home/carly/.bashrc
+/usr/bin/useradd -m crystal
+/usr/bin/usermod -p $(echo "crystal" | openssl passwd -6 -stdin) crystal
+/usr/bin/usermod -p $(echo "crystal" | openssl passwd -6 -stdin) root
+/usr/bin/chmod +x /home/crystal/.xinitrc
+echo "menu" >> /home/crystal/.bashrc
 chmod +x /etc/crystal/bootopts/*
-echo "Configured the 'carly' user. Exiting chroot."
+systemctl enable gdm
+sed -i 's/#en_US.UTF-8 UTF-8/#en_US.UTF-8 UTF-8/g' /etc/locale-gen
+locale-gen
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
+echo "Configured the system user. Exiting chroot."

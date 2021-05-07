@@ -1,10 +1,18 @@
 rm -fv *.iso
 
+prof="crystal"
+
 if [[ "$1" == "" ]]; then
-    printf "Profile: "
-    read prof
+    printf "cli/gui : "
+    read MODE
 else
-    prof=$1
+    MODE="$1"
+fi
+
+if [[ "$MODE" == "cli" ]]; then
+    sed -i 's/gnome/#gnome/g' ${prof}/packages.x86_64
+    sed -i 's/mesa/#mesa/g' ${prof}/packages.x86_64
+    sed -i 's/systemctl/#systemctl/g' chrooted.sh
 fi
 
 WORKDIR=$(mktemp -d)
@@ -15,3 +23,9 @@ cp /etc/pacman.d/mirrorlist ${prof}/airootfs/etc/pacman.d/.
 echo "Built on $(date +"%D @ %T EST")" > ${prof}/airootfs/etc/buildstamp
 time sudo ./mkarchiso -v -w $WORKDIR -o . ${prof}
 sudo rm -rf $WORKDIR
+
+if [[ "$MODE" == "cli" ]]; then
+    sed -i 's/#gnome/gnome/g' ${prof}/packages.x86_64
+    sed -i 's/#mesa/mesa/g' ${prof}/packages.x86_64
+    sed -i 's/#systemctl/systemctl/g' chrooted.sh
+fi
