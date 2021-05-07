@@ -1,2 +1,2 @@
 root ALL=(ALL) ALL
-carly ALL=(ALL) NOPASSWD: ALL
+crystal ALL=(ALL) NOPASSWD: ALL
