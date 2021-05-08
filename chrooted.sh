@@ -15,9 +15,10 @@ chmod +x /usr/bin/mirrorsetup
 /usr/bin/useradd -m crystal
 /usr/bin/usermod -p $(echo "crystal" | openssl passwd -6 -stdin) crystal
 /usr/bin/usermod -p $(echo "crystal" | openssl passwd -6 -stdin) root
-/usr/bin/chmod +x /home/crystal/.xinitrc
 echo "menu" >> /home/crystal/.bashrc
-chmod +x /etc/crystal/bootopts/*
+if [[ -d /etc/crystal/bootopts ]]; then
+    chmod +x /etc/crystal/bootopts/*
+fi
 systemctl enable gdm
 # i'm tired ok
 echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
