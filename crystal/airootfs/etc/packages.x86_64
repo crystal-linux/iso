@@ -3,7 +3,6 @@ xorg-xinit
 reflector
 pacman-contrib
 nano
-doas
 linux-firmware
 tree
 cloud-init
@@ -12,7 +11,7 @@ mkinitcpio
 mkinitcpio-archiso
 openssh
 syslinux
-gnome
+plasma
 mesa
 
 # Things we're hosting
