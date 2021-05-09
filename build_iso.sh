@@ -1,6 +1,14 @@
 rm -fv *.iso
 
-WORKDIR=$(mktemp -d)
+if [[ "$1" == "" ]]; then
+    WORKDIR=$(mktemp -d)
+else
+    WORKDIR="$1"
+    if [[ ! -d "$WORKDIR" ]]; then
+        mkdir -p "$WORKDIR"
+    fi
+fi
+
 # idk if this would've happened automatically?
 cp crystal/pacman.conf crystal/airootfs/etc/.
 cp crystal/packages.x86_64 crystal/airootfs/etc/packages.x86_64

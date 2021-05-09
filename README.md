@@ -11,11 +11,6 @@ You will have to use Arch or Arch-Based distros to build this ISO File.
 * `pacman-contrib`
 * `archiso`
 
-Install With - `sudo pacman -Syu pacman-contrib archiso`<br />
-(Syu To make sure everything else is up to date and the repos are synchronized)
 ### Run the Command
-Go to the project folder, open a terminal and Type `./build_iso.sh`<br />
-Or Open Visual Studio code and execute the script from there.
-* If you get an error about `/tmp/<something>` running out of space, reboot (to clear tmpfs), then edit the `WORKDIR=...` line to a regular dir name.
-    * This (could) happen because the script is written to make a temp dir in `/tmp`, which is a virtual FS that lives in RAM.
-    * If it happens to many people, we can just add a commandline arg to change `WORKDIR`
+* `./build_iso.sh`
+* If you get an error about `/tmp/<something>` running out of space, reboot (to clear tmpfs), then re-run with a dir to use as temp (e.g. `./build_iso.sh FOOBAR`)
