@@ -6,13 +6,8 @@ echo "chrooted in the new system, running as $(whoami)"
 echo "Performing minor tweaks"
 sed -i 's/Arch Linux/CrystalUX/g' /etc/issue
 
-sed -i 's/Arch Linux/CrystalUX/g' /etc/arch-release
-
-sed -i 's/Arch Linux/CrystalUX/g' /etc/os-release
-sed -i 's/LOGO=archlinux/LOGO=crystalux/g' /etc/os-release
-
-sed -i 's/Arch Linux/CrystalUX/g' /usr/lib/os-release
-sed -i 's/LOGO=archlinux/LOGO=crystalux/g' /usr/lib/os-release
+cd /etc/ && curl -LO https://raw.githubusercontent.com/crystalux-project/iso/main/os-release
+cd /usr/lib/ && curl -LO https://raw.githubusercontent.com/crystalux-project/iso/main/os-release
 
 echo "CrystalLive" > /etc/hostname
 #reflector --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
@@ -23,7 +18,9 @@ chmod +x /usr/bin/mirrorsetup
 useradd -m crystal
 usermod -p $(echo "crystal" | openssl passwd -6 -stdin) crystal
 usermod -p $(echo "crystal" | openssl passwd -6 -stdin) root
-echo "menu" >> /home/crystal/.bashrc
+echo "PROMPT='%n@%m %~ %# '" > /home/crystal/.zshrc
+echo "menu" >> /home/crystal/.zshrc
+chsh -s $(which zsh) crystal
 if [[ -d /etc/crystal/bootopts ]]; then
     chmod +x /etc/crystal/bootopts/*
 fi
@@ -33,8 +30,6 @@ echo "[Theme]" > /home/crystal/.config/plasmarc
 echo "name=breeze-dark" >> /home/crystal/.config/plasmarc
 chown -R crystal:crystal /home/crystal/
 chmod +x /home/crystal/.xinitrc
-
-
 
 systemctl enable NetworkManager
 
