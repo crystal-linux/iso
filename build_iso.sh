@@ -12,7 +12,8 @@ fi
 if [[ "$MODE" == "cli" ]]; then
     sed -i 's/gnome/#gnome/g' ${prof}/packages.x86_64
     sed -i 's/mesa/#mesa/g' ${prof}/packages.x86_64
-    sed -i 's/systemctl/#systemctl/g' chrooted.sh
+else
+    sed -i 's/DISABLED/ENABLED/g' chrooted.sh
 fi
 
 WORKDIR=$(mktemp -d)
@@ -27,5 +28,6 @@ sudo rm -rf $WORKDIR
 if [[ "$MODE" == "cli" ]]; then
     sed -i 's/#gnome/gnome/g' ${prof}/packages.x86_64
     sed -i 's/#mesa/mesa/g' ${prof}/packages.x86_64
-    sed -i 's/#systemctl/systemctl/g' chrooted.sh
+else
+    sed -i 's/ENABLED/DISABLED/g' chrooted.sh
 fi
