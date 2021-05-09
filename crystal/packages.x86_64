@@ -12,7 +12,11 @@ mkinitcpio-archiso
 openssh
 syslinux
 plasma
+konsole
+firefox
+nemo
 mesa
+networkmanager
 
 # Things we're hosting
 arch-install-scripts

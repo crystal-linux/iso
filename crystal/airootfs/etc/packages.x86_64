@@ -13,6 +13,7 @@ openssh
 syslinux
 plasma
 mesa
+networkmanager
 
 # Things we're hosting
 arch-install-scripts

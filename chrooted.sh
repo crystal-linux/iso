@@ -28,11 +28,11 @@ if [[ -d /etc/crystal/bootopts ]]; then
     chmod +x /etc/crystal/bootopts/*
 fi
 
-echo "export XDG_SESSION_TYPE=x11" > /home/crystal/.xinitrc
-echo "export GDK_BACKEND=x11" >> /home/crystal/.xinitrc
-echo "exec gnome-session" >> /home/crystal/.xinitrc
+echo "exec startplasma-x11" > /home/crystal/.xinitrc
 chown crystal:crystal /home/crystal/.xinitrc
 chmod +x /home/crystal/.xinitrc
+
+systemctl enable NetworkManager
 
 # i'm tired ok
 echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
