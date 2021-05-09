@@ -29,8 +29,12 @@ if [[ -d /etc/crystal/bootopts ]]; then
 fi
 
 echo "exec startplasma-x11" > /home/crystal/.xinitrc
-chown crystal:crystal /home/crystal/.xinitrc
+echo "[Theme]" > /home/crystal/.config/plasmarc
+echo "name=breeze-dark" >> /home/crystal/.config/plasmarc
+chown -R crystal:crystal /home/crystal/
 chmod +x /home/crystal/.xinitrc
+
+
 
 systemctl enable NetworkManager
 
