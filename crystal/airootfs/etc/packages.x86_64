@@ -1,13 +1,11 @@
 xorg
 xorg-xinit
-arch-install-scripts
 reflector
 pacman-contrib
 nano
 doas
 linux-firmware
 tree
-base
 cloud-init
 linux
 mkinitcpio
@@ -17,8 +15,11 @@ syslinux
 gnome
 mesa
 
+# Things we're hosting
+arch-install-scripts
+amethyst
+base
 crystal-misc
 crystal-cli-boot
 crystal-branding
 neofetch
-amethyst
