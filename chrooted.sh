@@ -18,20 +18,17 @@ chmod +x /usr/bin/mirrorsetup
 useradd -m crystal
 usermod -p $(echo "crystal" | openssl passwd -6 -stdin) crystal
 usermod -p $(echo "crystal" | openssl passwd -6 -stdin) root
-echo "PROMPT='%n@%m %~ %# '" > /home/crystal/.zshrc
-echo "menu" >> /home/crystal/.zshrc
 chsh -s $(which zsh) crystal
 if [[ -d /etc/crystal/bootopts ]]; then
     chmod +x /etc/crystal/bootopts/*
 fi
 
-echo "exec startplasma-x11" > /home/crystal/.xinitrc
-echo "[Theme]" > /home/crystal/.config/plasmarc
-echo "name=breeze-dark" >> /home/crystal/.config/plasmarc
 chown -R crystal:crystal /home/crystal/
 chmod +x /home/crystal/.xinitrc
 
 systemctl enable NetworkManager
+
+sudo -u crystal lookandfeeltool -a org.kde.breezedark.desktop
 
 # i'm tired ok
 echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
