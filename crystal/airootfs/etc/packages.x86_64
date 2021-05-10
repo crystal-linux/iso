@@ -12,6 +12,9 @@ mkinitcpio-archiso
 openssh
 syslinux
 plasma
+konsole
+firefox
+nemo
 mesa
 networkmanager
 
