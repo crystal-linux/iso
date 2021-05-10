@@ -1,0 +1,2 @@
+PROMPT="%n@%m %~ %# "
+menu

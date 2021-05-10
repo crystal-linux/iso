@@ -17,6 +17,7 @@ firefox
 nemo
 mesa
 networkmanager
+zsh
 
 # Things we're hosting
 arch-install-scripts
