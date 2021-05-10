@@ -18,6 +18,7 @@ nemo
 mesa
 networkmanager
 zsh
+ckbcomp
 
 # Things we're hosting
 arch-install-scripts
