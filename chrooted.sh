@@ -3,14 +3,6 @@
 # This file is run via mkarchiso while chrooted as the new system
 echo "chrooted in the new system, running as $(whoami)"
 
-echo "Performing minor tweaks"
-sed -i 's/Arch Linux/CrystalUX/g' /etc/issue
-
-cd /etc/ && curl -LO https://raw.githubusercontent.com/crystalux-project/iso/main/os-release
-cd /usr/lib/ && curl -LO https://raw.githubusercontent.com/crystalux-project/iso/main/os-release
-echo "CHECK CURL OUTPUT?"
-read
-
 echo "CrystalLive" > /etc/hostname
 #reflector --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
 echo "sudo reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist" >> /usr/bin/mirrorsetup
