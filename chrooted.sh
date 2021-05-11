@@ -8,6 +8,8 @@ sed -i 's/Arch Linux/CrystalUX/g' /etc/issue
 
 cd /etc/ && curl -LO https://raw.githubusercontent.com/crystalux-project/iso/main/os-release
 cd /usr/lib/ && curl -LO https://raw.githubusercontent.com/crystalux-project/iso/main/os-release
+echo "CHECK CURL OUTPUT?"
+read
 
 echo "CrystalLive" > /etc/hostname
 #reflector --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
@@ -28,7 +30,8 @@ chmod +x /home/crystal/.xinitrc
 
 systemctl enable NetworkManager
 
-sudo -u crystal lookandfeeltool -a org.kde.breezedark.desktop
+# IDK if we even *should* auto-set the theme
+#sudo -u crystal lookandfeeltool -a org.kde.breezedark.desktop
 
 # i'm tired ok
 echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen

@@ -19,6 +19,7 @@ mesa
 networkmanager
 zsh
 ckbcomp
+curl
 
 # Things we're hosting
 arch-install-scripts
