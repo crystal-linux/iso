@@ -28,5 +28,5 @@ base
 filesystem
 crystal-cli-boot
 crystal-branding
-crystal-cli-installer
+citrine
 neofetch
