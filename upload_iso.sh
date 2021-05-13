@@ -8,4 +8,4 @@ else
 fi
 
 scp $FN crystalux@salyut.one:public_html/isos/.
-#ssh crystalux@salyut.one "ln -sf public_html/isos/$FN public_html/isos/latest"
+ssh crystalux@salyut.one "ln -sf public_html/isos/$FN public_html/isos/crystal-latest.iso"
