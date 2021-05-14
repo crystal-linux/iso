@@ -29,4 +29,5 @@ systemctl enable NetworkManager
 echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
+ln -sf /usr/bin/amethyst /usr/bin/ame
 echo "Configured the system. Exiting chroot."
