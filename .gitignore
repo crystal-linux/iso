@@ -1,4 +1,4 @@
 *.iso
 sysroot/
 sysroot.*
-.vagrant
+crystal/pacman.conf

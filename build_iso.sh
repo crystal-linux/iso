@@ -10,6 +10,12 @@ else
     fi
 fi
 
+if [[ "$2" == "testing" ]]; then
+    cp pacman.testing crystal/pacman.conf
+else
+    cp pacman.def crystal/pacman.conf
+fi
+
 # idk if this would've happened automatically?
 cp crystal/pacman.conf crystal/airootfs/etc/.
 cp crystal/packages.x86_64 crystal/airootfs/etc/packages.x86_64
