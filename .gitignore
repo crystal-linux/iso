@@ -2,4 +2,4 @@
 sysroot/
 sysroot.*
 crystal/pacman.conf
-crystal/airootfs/pacman.conf
+crystal/airootfs/etc/pacman.conf
