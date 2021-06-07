@@ -33,7 +33,6 @@ Architecture = auto
 # Misc options
 #UseSyslog
 Color
-TotalDownload
 ILoveCandy
 # We cannot check disk space from within a chroot environment
 #CheckSpace
