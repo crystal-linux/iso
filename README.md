@@ -11,7 +11,7 @@
 <img src=https://img.shields.io/github/forks/crystalux-project/iso?style=flat&logo=appveyor&color=a900ff />
 <img src=https://img.shields.io/github/issues/crystalux-project/iso?style=flat&logo=appveyor&color=a900ff />
 <img src=https://img.shields.io/github/issues-pr/crystalux-project/iso?style=flat&logo=appveyor&color=a900ff />
-<img alt="Discord" src="https://img.shields.io/discord/825473796227858482?color=blue&label=Discord&logo=Discord&logoColor=white"?link=https://discord.gg/yp4xpZeAgW&link=https://discord.gg/yp4xpZeAgW> </p>
+<a href="https://discord.gg/yp4xpZeAgW"><img alt="Discord" src="https://img.shields.io/discord/825473796227858482?color=blue&label=Discord&logo=Discord&logoColor=white"?link=https://discord.gg/yp4xpZeAgW&link=https://discord.gg/yp4xpZeAgW> </p></a>
 <p align="center"> Build or download the Arch-based CrystalUX iso. </p>
 
 ## Dependencies:
