@@ -11,7 +11,7 @@
 <img src=https://img.shields.io/github/forks/crystalux-project/iso?style=flat&logo=appveyor&color=a900ff />
 <img src=https://img.shields.io/github/issues/crystalux-project/iso?style=flat&logo=appveyor&color=a900ff />
 <img src=https://img.shields.io/github/issues-pr/crystalux-project/iso?style=flat&logo=appveyor&color=a900ff />
-<p align="center"> Build the Arch-based CrystalUX iso. </p>
+<p align="center"> Build or download the Arch-based CrystalUX iso. </p>
 
 ## How to Build:
 You will have to use Arch or Arch-Based distros to build this ISO File.
