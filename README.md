@@ -7,10 +7,10 @@
 <h2 align="center"> Crystal ISO </h2>
 </p>
 <p align="center">
-<img src=https://img.shields.io/github/stars/crystalux-project/iso?style=for-the-badge&logo=plastic&color=blue />
-<img src=https://img.shields.io/github/forks/crystalux-project/iso?style=for-the-badge&logo=plastic&color=blue />
-<img src=https://img.shields.io/github/issues/crystalux-project/iso?style=for-the-badge&logo=plastic&color=informational />
-<img src=https://img.shields.io/github/issues-pr/crystalux-project/iso?style=for-the-badge&logo=plastic&color=informational />
+<img src=https://img.shields.io/github/stars/crystalux-project/iso?style=flat&logo=appveyor&color=blue />
+<img src=https://img.shields.io/github/forks/crystalux-project/iso?style=flat&logo=appveyor&color=blue />
+<img src=https://img.shields.io/github/issues/crystalux-project/iso?style=flat&logo=appveyor&color=informational />
+<img src=https://img.shields.io/github/issues-pr/crystalux-project/iso?style=flat&logo=appveyor&color=informational />
 <p align="center"> Build the Arch-based CrystalUX iso. </p>
 
 ## How to Build:
