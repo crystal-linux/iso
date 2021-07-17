@@ -78,10 +78,6 @@ RemoteFileSigLevel = Never
 Server = https://github.com/crystalux-project/packages/raw/testing/crystal/
 SigLevel = Never
 
-[special]
-Server = https://repo.xhec.us/special/
-SigLevel = Never
-
 [core]
 Include = /etc/pacman.d/mirrorlist
 
@@ -93,12 +89,6 @@ Include = /etc/pacman.d/mirrorlist
 
 [community]
 Include = /etc/pacman.d/mirrorlist
-
-# Apparently this is a depend??
-# (ckbcomp to be exact)
-[aur]
-Server = https://repo.xhec.us/aur
-SigLevel = Never
 
 # If you want to run 32 bit applications on your x86_64 system,
 # enable the multilib repositories as required here.
