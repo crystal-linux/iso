@@ -16,6 +16,38 @@ else
     cp pacman.def crystal/pacman.conf
 fi
 
+if [[ -f aur-pkgs ]]; then
+    if [[ ! -d repo ]]; then
+        mkdir repo
+        mkdir temp
+        for pkg in "$(cat aur-pkgs)"; do
+            pushd temp
+            git clone https://aur.archlinux.org/$pkg.git
+            pushd $pkg
+            makepkg -sf --skippgpcheck
+            cp *.pkg.tar.zst ../../repo/.
+            popd
+            popd
+        done
+        rm -rf temp/
+        pushd repo
+        repo-add aur.db.tar.gz *.pkg.tar.*
+        MP=$(pwd)
+        popd
+
+        echo >> crystal/packages.x86_64
+        for pkg in "$(cat aur-pkgs)"; do
+            echo "${pkg}" >> crystal/packages.x86_64
+        done
+
+    fi
+
+        echo "[aur]" >> crystal/pacman.conf
+        echo "SigLevel = Never" >> crystal/pacman.conf
+        echo "Server = file://${MP}" >> crystal/pacman.conf
+
+fi
+
 # idk if this would've happened automatically?
 cp crystal/pacman.conf crystal/airootfs/etc/.
 cp crystal/packages.x86_64 crystal/airootfs/etc/packages.x86_64
