@@ -21,6 +21,7 @@ zsh
 ckbcomp
 curl
 openbsd-netcat
+gparted
 
 # Things we're hosting
 arch-install-scripts
