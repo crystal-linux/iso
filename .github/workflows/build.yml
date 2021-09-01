@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Build 
         run: |
-         pacman -Syu --needed --noconfirm && pacman -S git --needed --noconfirm && git clone https://github.com/Stealth1226/iso/ && cd iso && bash deps.sh && bash build_iso.sh
+         pacman -Syu --needed --noconfirm && pacman -S git --needed --noconfirm && git clone https://github.com/crystalux-project/iso/ && cd iso && bash deps.sh && bash build_iso.sh
 
       - name: Get current date
         id: date
