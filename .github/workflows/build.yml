@@ -1,0 +1,31 @@
+name: build
+on: 
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env: 
+       GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
+    container:
+      image: archlinux:base-devel
+      options: --privileged
+
+    steps:
+      - name: Build 
+        run: |
+         pacman -Syu --needed --noconfirm && pacman -S git --needed --noconfirm && git clone https://github.com/crystalux-project/iso/ && cd iso && bash deps.sh && bash build_iso.sh
+
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+
+      - name: Upload 
+        uses: ncipollo/release-action@v1
+        with:
+           artifacts: "iso/*.iso"
+           token: ${{ secrets.SECRET_TOKEN }}
+           tag: ${{ steps.date.outputs.date }} 
+        
+           
