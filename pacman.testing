@@ -75,7 +75,7 @@ RemoteFileSigLevel = Never
 #Include = /etc/pacman.d/mirrorlist
 
 [crystal]
-Server = https://github.com/crystalux-project/packages/raw/testing/crystal/
+Server = https://github.com/crystal-linux/packages/raw/testing/crystal/
 SigLevel = Never
 
 [core]

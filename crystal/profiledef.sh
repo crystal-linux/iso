@@ -3,7 +3,7 @@
 
 iso_name="crystal-live"
 iso_label="CRYS_$(date +%Y%m)"
-iso_publisher="CrystalUX <https://github.com/CrystalUX-project"
+iso_publisher="CrystalUX <https://github.com/crystal-linux"
 iso_application="CrystalUX Live"
 iso_version="$(date +"%m-%d-%g-%H-%M")"
 install_dir="arch"
