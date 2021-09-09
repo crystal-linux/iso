@@ -22,10 +22,12 @@ ckbcomp
 curl
 openbsd-netcat
 gparted
+memtest86+
+edk2-shell
 
 # Things we're hosting
 arch-install-scripts
-amethyst
+ame
 base
 filesystem
 crystal-cli-boot
