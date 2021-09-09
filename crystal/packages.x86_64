@@ -22,7 +22,7 @@ ckbcomp
 curl
 openbsd-netcat
 gparted
-memtest86+`
+memtest86+
 edk2-shell
 
 # Things we're hosting
