@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Build 
         run: |
-         pacman -Syu --needed --noconfirm && pacman -S git archiso pacman-contrib --needed --noconfirm && git clone https://github.com/crystal-linux/iso/ && cd iso && bash build_iso.sh
+         pacman-key --init && pacman -Syu --needed --noconfirm && pacman -S git archiso pacman-contrib --needed --noconfirm && git clone https://github.com/crystal-linux/iso/ && cd iso && bash build_iso.sh
 
       - name: Get current date
         id: date
