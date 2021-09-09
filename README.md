@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/crystal-linux">
-    <img src="https://raw.githubusercontent.com/crystal-linux/branding/main/crystalux-logo-minimal-iso.png" alt="Logo" width="150" height="150">
+    <img src="https://raw.githubusercontent.com/crystal-linux/branding/main/crystal-logo-minimal-iso.png" alt="Logo" width="150" height="150">
   </a>
 </p>
 <p align="center"> 
