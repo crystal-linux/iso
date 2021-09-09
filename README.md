@@ -17,7 +17,6 @@
 ## Dependencies:
 * `pacman-contrib`
 * `archiso`
-* `github-cli`
 
 ## How to Build:
 You will have to use Arch or Arch-Based distros to build this ISO File.
