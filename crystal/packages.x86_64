@@ -15,6 +15,7 @@ curl
 openbsd-netcat
 memtest86+
 edk2-shell
+sudo
 
 # Things we're hosting
 arch-install-scripts

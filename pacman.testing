@@ -76,7 +76,7 @@ RemoteFileSigLevel = Never
 
 [crystal]
 Server = http://repo.getcryst.al/testing/$arch/
-SigLevel = Never
+# SigLevel = Never
 
 [core]
 Include = /etc/pacman.d/mirrorlist
