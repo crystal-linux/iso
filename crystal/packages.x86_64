@@ -1,27 +1,18 @@
-xorg
-xorg-xinit
 reflector
 pacman-contrib
 nano
 linux-firmware
 tree
-cloud-init
 linux
 mkinitcpio
 mkinitcpio-archiso
 openssh
 syslinux
-plasma
-konsole
-firefox
-nemo
-mesa
 networkmanager
 zsh
 ckbcomp
 curl
 openbsd-netcat
-gparted
 memtest86+
 edk2-shell
 

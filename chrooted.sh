@@ -18,7 +18,6 @@ if [[ -d /etc/crystal/bootopts ]]; then
     chmod +x /etc/crystal/bootopts/*
 fi
 
-echo "exec startplasma-x11" > /home/crystal/.xinitrc
 cat >> /home/crystal/.zshrc << EOF
 PROMPT="%n@%m %~ %# "
 alias paste="nc termbin.com 9999"
@@ -26,7 +25,6 @@ menu
 EOF
 
 chown -R crystal:crystal /home/crystal/
-chmod +x /home/crystal/.xinitrc
 
 systemctl enable NetworkManager
 
