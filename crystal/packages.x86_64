@@ -22,7 +22,6 @@ arch-install-scripts
 ame
 base
 filesystem
-crystal-cli-boot
 crystal-branding
 citrine
 neofetch
