@@ -4,7 +4,6 @@
 echo "chrooted in the new system, running as $(whoami)"
 
 echo "CrystalLive" > /etc/hostname
-#reflector --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
 echo "sudo reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist" >> /usr/bin/mirrorsetup
 chmod +x /usr/bin/mirrorsetup
 
@@ -14,9 +13,6 @@ useradd -m crystal
 usermod -p $(echo "crystal" | openssl passwd -6 -stdin) crystal
 usermod -p $(echo "crystal" | openssl passwd -6 -stdin) root
 chsh -s $(which zsh) crystal
-if [[ -d /etc/crystal/bootopts ]]; then
-    chmod +x /etc/crystal/bootopts/*
-fi
 
 cat >> /home/crystal/.zshrc << EOF
 PROMPT="%n@%m %~ %# "
