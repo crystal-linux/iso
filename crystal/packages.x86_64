@@ -16,6 +16,7 @@ openbsd-netcat
 memtest86+
 edk2-shell
 sudo
+dosfstools
 
 # Things we're hosting
 arch-install-scripts
