@@ -17,6 +17,8 @@ memtest86+
 edk2-shell
 sudo
 dosfstools
+systemd-sysvcompat
+cowsay
 
 # Things we're hosting
 arch-install-scripts
