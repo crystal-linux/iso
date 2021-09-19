@@ -18,7 +18,7 @@ cat >> /home/crystal/.zshrc << EOF
 PROMPT="%n@%m %~ %# "
 alias paste="nc termbin.com 9999"
 clear
-neofetch
+pfetch
 echo "live credentials -"
 echo "crystal:crystal // root:crystal"
 echo
