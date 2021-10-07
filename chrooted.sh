@@ -23,7 +23,7 @@ echo "live credentials -"
 echo "crystal:crystal // root:crystal"
 echo
 echo -e "run \e[95m$ citrine\e[39m to open the installer"
-
+alias nmtui="nmtui && source .zshrc"
 cowsay "don't forget to set up a network with -- $ nmtui -- to install over wi-fi."
 EOF
 
