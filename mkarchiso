@@ -984,6 +984,8 @@ _build_bootstrap_image() {
     cd -- "${_bootstrap_parent}"
 
     _msg_info "Creating bootstrap image..."
+    _msg_info "But before that, we're running inject.sh"
+    pushd ${startdir} && ./inject.sh ${pacstrap_dir} && popd
     bsdtar -cf - "root.${arch}" | gzip -cn9 > "${out_dir}/${image_name}"
     _msg_info "Done!"
     du -h -- "${out_dir}/${image_name}"

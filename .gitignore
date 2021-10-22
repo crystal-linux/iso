@@ -1,6 +1,8 @@
 *.iso
+*.tar.gz
 sysroot/
 sysroot.*
 crystal/pacman.conf
 crystal/airootfs/etc/pacman.conf
 repo/
+chrooted.sh
