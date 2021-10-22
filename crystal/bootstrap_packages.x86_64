@@ -7,24 +7,18 @@ linux
 mkinitcpio
 mkinitcpio-archiso
 openssh
-syslinux
 networkmanager
 zsh
 ckbcomp
 curl
 openbsd-netcat
-memtest86+
 edk2-shell
 sudo
-dosfstools
 systemd-sysvcompat
-cowsay
 
 # Things we're hosting
 arch-install-scripts
 ame
 base
 filesystem
-citrine
-neofetch
 pfetch
