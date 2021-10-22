@@ -12,7 +12,7 @@ chmod +x /usr/bin/mirrorsetup
 useradd -m crystal
 usermod -p $(echo "crystal" | openssl passwd -6 -stdin) crystal
 usermod -p $(echo "crystal" | openssl passwd -6 -stdin) root
-chsh -s $(which zsh) crystal
+chsh -s /usr/bin/zsh crystal
 
 cat >> /home/crystal/.zshrc << EOF
 PROMPT="%n@%m %~ %# "
