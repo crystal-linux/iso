@@ -4,8 +4,10 @@
 echo "chrooted in the new system, running as $(whoami)"
 
 echo "CrystalLive" > /etc/hostname
-echo "sudo reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist" >> /usr/bin/mirrorsetup
+echo "reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist" >> /usr/bin/mirrorsetup
 chmod +x /usr/bin/mirrorsetup
+
+cp /pacman.conf /etc/pacman.conf
 
 # We don't add crystal until here so that our packages which change
 # /etc/skel have been installed already
