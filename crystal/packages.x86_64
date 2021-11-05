@@ -19,6 +19,7 @@ sudo
 dosfstools
 systemd-sysvcompat
 cowsay
+btrfs-progs
 
 # Things we're hosting
 arch-install-scripts
