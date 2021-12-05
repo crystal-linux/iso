@@ -71,12 +71,14 @@ RemoteFileSigLevel = Never
 # repo name header and Include lines. You can add preferred servers immediately
 # after the header, and they will be used before the default mirrors.
 
+[crystal-x86_64]
+Server = https://repo.getcryst.al/testing/$arch/
+
+[crystal-any]
+Server = https://repo.getcryst.al/testing/any
+
 #[testing]
 #Include = /etc/pacman.d/mirrorlist
-
-[crystal]
-Server = http://repo.getcryst.al/testing/$arch/
-# SigLevel = Never
 
 [core]
 Include = /etc/pacman.d/mirrorlist
