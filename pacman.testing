@@ -77,6 +77,9 @@ Server = https://repo.getcryst.al/testing/$arch/
 [crystal-any]
 Server = https://repo.getcryst.al/testing/any
 
+[crystal-extra]
+Server = https://repo.getcryst.al/testing/extra
+
 #[testing]
 #Include = /etc/pacman.d/mirrorlist
 
