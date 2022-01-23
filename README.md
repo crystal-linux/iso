@@ -21,4 +21,4 @@ You will have to use Arch or Arch-Based distros to build this ISO File.
 * Go to the project folder
 * Run `./build_iso.sh`
     * If you get an error about `/tmp/<something>` running out of space, reboot (to clear tmpfs), then re-run with a dir to use as temp (e.g. `./build_iso.sh FOOBAR`)
-    * If you also add a second arg as in `./build_iso.sh /some/folder testing`, you'll pull from our testing repo (not RN!!)
+    * If you also add a second arg as in `./build_iso.sh /some/folder testing`, you'll pull from our testing repo
