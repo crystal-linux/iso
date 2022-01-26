@@ -1,3 +1,4 @@
+arch-install-scripts
 reflector
 pacman-contrib
 nano
@@ -7,7 +8,7 @@ linux
 mkinitcpio
 mkinitcpio-archiso
 openssh
-syslinux
+grub
 networkmanager
 zsh
 ckbcomp

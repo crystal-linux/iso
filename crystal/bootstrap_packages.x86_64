@@ -1,3 +1,4 @@
+arch-install-scripts
 reflector
 pacman-contrib
 nano
@@ -7,18 +8,25 @@ linux
 mkinitcpio
 mkinitcpio-archiso
 openssh
+grub
 networkmanager
 zsh
 ckbcomp
 curl
 openbsd-netcat
+
 edk2-shell
 sudo
+
 systemd-sysvcompat
+
+
+
 
 # Things we're hosting
 arch-install-scripts
-ame
+amethyst
 base
 filesystem
+
 pfetch
