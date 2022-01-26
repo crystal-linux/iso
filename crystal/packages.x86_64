@@ -20,10 +20,11 @@ dosfstools
 systemd-sysvcompat
 cowsay
 btrfs-progs
+xfsprogs
 
 # Things we're hosting
 arch-install-scripts
-ame
+amethyst
 base
 filesystem
 citrine

@@ -72,13 +72,13 @@ RemoteFileSigLevel = Never
 # after the header, and they will be used before the default mirrors.
 
 [crystal-x86_64]
-Server = https://repo.getcryst.al/main/$arch/
+Server = https://repo.getcryst.al/x86_64/
 
 [crystal-any]
-Server = https://repo.getcryst.al/main/any/
+Server = https://repo.getcryst.al/any/
 
 [crystal-extra]
-Server = https://repo.getcryst.al/main/extra/
+Server = https://repo.getcryst.al/extra/
 
 #[testing]
 #Include = /etc/pacman.d/mirrorlist

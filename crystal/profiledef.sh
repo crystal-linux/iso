@@ -3,7 +3,7 @@
 
 iso_name="crystal-live"
 iso_label="CRYS_$(date +%Y%m)"
-iso_publisher="Crystal Linux <https://github.com/crystal-linux>"
+iso_publisher="Crystal Linux <https://getcryst.al>"
 iso_application="Crystal Linux Live"
 iso_version="$(date +"%m-%d-%g-%H-%M")"
 install_dir="arch"
