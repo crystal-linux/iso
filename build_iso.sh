@@ -19,7 +19,6 @@ cp /etc/pacman.d/mirrorlist crystal/airootfs/etc/pacman.d/.
 echo "Built on $(date +"%D @ %T EST")" > crystal/airootfs/etc/buildstamp
 
 cp chrooted-iso.sh chrooted.sh
-
 time sudo ./mkarchiso -v -w $WORKDIR -o . crystal
 
 sudo rm -rf $WORKDIR
