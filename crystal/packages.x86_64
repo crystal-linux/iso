@@ -9,7 +9,6 @@ mkinitcpio
 mkinitcpio-archiso
 openssh
 syslinux
-grub
 networkmanager
 zsh
 ckbcomp
@@ -23,12 +22,26 @@ systemd-sysvcompat
 cowsay
 btrfs-progs
 xfsprogs
+gparted
+archinstall
+xorg
+xorg-apps
+xorg-xinit
+mesa
+firefox
+xfce4-terminal
 
 # Things we're hosting
 arch-install-scripts
-amethyst
 base
 filesystem
-citrine
 neofetch
 pfetch
+grub
+
+# Our in-house
+jade
+onyx
+amethyst
+citrine
+crystal-wallpapers

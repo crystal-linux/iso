@@ -25,6 +25,17 @@ echo
 echo -e "run \e[95m$ citrine\e[39m to open the installer"
 alias nmtui="nmtui && source .zshrc"
 cowsay "don't forget to set up a network with -- $ nmtui -- to install over wi-fi."
+if [[ -z "\$DISPLAY" ]]; then
+    gsettings set org.gnome.desktop.interface gtk-theme "crystal-obsidian"
+    gsettings set org.gnome.desktop.interface icon-theme "crystal-obsidian-icons"
+    gsettings set org.gnome.desktop.background picture-uri "file:///usr/share/backgrounds/crystal/live-iso.png"
+    startx
+fi
+EOF
+
+cat >> /home/crystal/.xinitrc << EOF
+export XDG_CURRENT_DESKTOP=Budgie:GNOME
+exec budgie-desktop
 EOF
 
 echo "zsh" > /home/crystal/.bashrc
