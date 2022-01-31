@@ -20,19 +20,13 @@ sudo
 dosfstools
 systemd-sysvcompat
 cowsay
-btrfs-progs
-xfsprogs
-gparted
-archinstall
 xorg
 xorg-apps
 xorg-xinit
 mesa
-firefox
-xfce4-terminal
+epiphany
 
 # Things we're hosting
-arch-install-scripts
 base
 filesystem
 neofetch
@@ -40,8 +34,6 @@ pfetch
 grub
 
 # Our in-house
-jade
 onyx
 amethyst
-citrine
 crystal-wallpapers

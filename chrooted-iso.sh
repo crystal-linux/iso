@@ -35,6 +35,7 @@ EOF
 
 cat >> /home/crystal/.xinitrc << EOF
 export XDG_CURRENT_DESKTOP=Budgie:GNOME
+epiphany &
 exec budgie-desktop
 EOF
 
