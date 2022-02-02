@@ -1,7 +1,6 @@
 arch-install-scripts
 reflector
 pacman-contrib
-nano
 linux-firmware
 tree
 linux
@@ -45,3 +44,8 @@ onyx
 amethyst
 citrine
 crystal-wallpapers
+
+# Text editors (issue #2)
+nano
+micro
+vim
