@@ -9,7 +9,7 @@ test:iso:
     - git clone https://git.tar.black/crystal/crystal-keyring.git
     - cd crystal-keyring && sudo -u nobody makepkg -sfi --log --noconfirm && cd ../
     - rm -rfv crystal-keyring
-    - pacman -Syu
+    - pacman -Syu --noconfirm
     - "echo 'nobody ALL=NOPASSWD: ALL' >> /etc/sudoers"
 
   script:
