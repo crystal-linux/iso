@@ -28,7 +28,6 @@ xorg-apps
 xorg-xinit
 mesa
 firefox
-xfce4-terminal
 
 # Things we're hosting
 arch-install-scripts
