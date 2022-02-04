@@ -2,6 +2,8 @@ image: "archlinux"
 
 test:iso:
   before_script:
+    - pacman -Sy reflector --noconfirm --needed
+    - reflector --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
     - pacman -Sy sudo base-devel pacman-contrib archiso wget git --noconfirm --needed
   script:
     - ./build_iso.sh
