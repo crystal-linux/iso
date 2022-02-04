@@ -3,14 +3,5 @@ image: "archlinux"
 test:iso:
   before_script:
     - pacman -Sy sudo base-devel pacman-contrib archiso wget git --noconfirm --needed
-    - rm /etc/os-release
-    - wget https://repo.getcryst.al/pacman.conf
-    - mv pacman.conf /etc/.
-    - git clone https://git.tar.black/crystal/crystal-keyring.git
-    - cd crystal-keyring && chmod -R 777 * && sudo -u nobody makepkg -sfi --log --noconfirm && cd ../
-    - rm -rfv crystal-keyring
-    - pacman -Syu --noconfirm
-    - "echo 'nobody ALL=NOPASSWD: ALL' >> /etc/sudoers"
-
   script:
     - ./build_iso.sh
