@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 
-iso_name="crystal-live"
+iso_name="agamOS-crystal-live"
 iso_label="CRYS_$(date +%Y%m)"
 iso_publisher="Crystal Linux <https://getcryst.al>"
 iso_application="Crystal Linux Live"
