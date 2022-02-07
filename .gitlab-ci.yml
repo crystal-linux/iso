@@ -7,6 +7,4 @@ iso:
     - pacman -Sy sudo base-devel pacman-contrib archiso wget git --noconfirm --needed
   script:
     - ./build_iso.sh
-  artifacts:
-    paths:
-      - "*.iso"
+    - cp *.iso /output/. -v
