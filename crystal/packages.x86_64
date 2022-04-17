@@ -38,6 +38,7 @@ pfetch
 grub
 
 # Our in-house
+jade_gui
 jade
 onyx
 amethyst
