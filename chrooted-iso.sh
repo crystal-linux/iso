@@ -40,6 +40,8 @@ EOF
 
 echo "zsh" > /home/crystal/.bashrc
 
+mkdir -p /home/crystal/Desktop
+cp /usr/share/applications/Jade.desktop /home/crystal/Desktop/Install.desktop
 chown -R crystal:crystal /home/crystal/
 
 systemctl enable NetworkManager
