@@ -28,7 +28,7 @@ cowsay "don't forget to set up wifi in the settings app if required."
 if [[ -z "\$DISPLAY" ]]; then
     gsettings set org.gnome.desktop.interface gtk-theme "crystal-obsidian"
     gsettings set org.gnome.desktop.interface icon-theme "crystal-obsidian-icons"
-    gsettings set org.gnome.desktop.background picture-uri "file:///usr/share/backgrounds/crystal/live-iso.png"
+    gsettings set org.gnome.desktop.background picture-uri "file:///usr/share/backgrounds/crystal/extended logo.png"
     startx
 fi
 EOF
