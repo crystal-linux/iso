@@ -22,7 +22,6 @@ pfetch
 echo "live credentials -"
 echo "crystal:crystal // root:crystal"
 echo
-echo -e "run \e[95m$ sudo citrine\e[39m to open the installer"
 alias nmtui="nmtui && source .zshrc"
 cowsay "don't forget to set up wifi in the settings app if required."
 if [[ -z "\$DISPLAY" ]]; then
