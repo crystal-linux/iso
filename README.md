@@ -8,7 +8,9 @@
 </p>
 <p align="center">
 <a href="https://discord.gg/yp4xpZeAgW"><img alt="Discord" src="https://img.shields.io/discord/825473796227858482?color=blue&label=Discord&logo=Discord&logoColor=white"?link=https://discord.gg/yp4xpZeAgW&link=https://discord.gg/yp4xpZeAgW> </a>
-<a href="https://github.com/crystal-linux/iso"><img src="https://github.com/crystal-linux/iso/actions/workflows/build.yml/badge.svg"></a></p>
+<a href="https://github.com/crystal-linux/iso"><img src="https://github.com/crystal-linux/iso/actions/workflows/build.yml/badge.svg"></a>
+<img src="https://img.shields.io/badge/Maintainer-@amy-brightgreen" alt=The maintainer of this repository" href="https://github.com/axtloss">
+</p>
 
 <p align="center"> Build or download the Arch-based Crystal Linux iso. </p>
 
