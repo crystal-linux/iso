@@ -32,3 +32,11 @@ You will have to use Arch or Arch-Based distros to build this ISO File.
 * Run `./build_iso.sh`
     * If you get an error about `/tmp/<something>` running out of space, reboot (to clear tmpfs), then re-run with a dir to use as temp (e.g. `./build_iso.sh FOOBAR`)
     * If you also add a second arg as in `./build_iso.sh /some/folder testing`, you'll pull from our testing repo
+    
+### How to build inside of Docker or Podman:
+* The container **MUST** be ran as root to build. 
+  * Other than needing to be ran as root, it should function correctly. You may need to install a few more dependencies aside from the ones listed here.
+  
+  To enter a distrobox container as root, run `distrobox enter --root boxnamehere -- bash` 
+  
+  (the `-- bash` is to ensure the container opens properly. Install your host shell afterwards to get it to open using your host shell.)
