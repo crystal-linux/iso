@@ -10,7 +10,6 @@ openssh
 syslinux
 networkmanager
 zsh
-ckbcomp
 curl
 openbsd-netcat
 memtest86+
@@ -38,7 +37,7 @@ pfetch
 grub
 
 # Our in-house
-jade_gui
+jade-gui
 jade
 onyx
 amethyst
