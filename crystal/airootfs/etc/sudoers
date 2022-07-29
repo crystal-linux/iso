@@ -1,3 +1,5 @@
-root ALL=(ALL) ALL
-crystal ALL=(ALL) NOPASSWD: ALL
-Defaults env_keep += "QTDIR PATH QT_PLUGIN_PATH QT_INCLUDE_PATH QML2_IMPORT_PATH KDE_SESSION_VERSION KDE_FULL_SESSION"
+Defaults env_keep += "PATH"
+Defaults insults
+
+root ALL=(ALL) NOPASSWD: ALL
+%wheel ALL=(ALL) NOPASSWD: ALL

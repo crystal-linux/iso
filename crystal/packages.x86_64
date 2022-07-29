@@ -1,51 +1,52 @@
+# Arch packages
+archinstall
 arch-install-scripts
-reflector
-pacman-contrib
-linux-firmware
-tree
+arch-install-scripts
+btrfs-progs
+cowsay
+curl
+dosfstools
+edk2-shell
+firefox
+gdm
+gparted
 linux
+linux-firmware
+memtest86+
+mesa
 mkinitcpio
 mkinitcpio-archiso
-openssh
-syslinux
 networkmanager
-zsh
-ckbcomp
-curl
 openbsd-netcat
-memtest86+
-edk2-shell
-sudo
-dosfstools
+openssh
+pacman-contrib
+reflector
+spice-vdagent
+syslinux
 systemd-sysvcompat
-cowsay
-btrfs-progs
+tree
 xfsprogs
-gparted
-archinstall
 xorg
 xorg-apps
 xorg-xinit
-mesa
-firefox
+zsh
 
 # Things we're hosting
-arch-install-scripts
 base
 filesystem
+grub
 neofetch
 pfetch
-grub
+sudo
 
-# Our in-house
-jade_gui
-jade
-onyx
+# Our packages
 amethyst
-
 crystal-wallpapers
+jade
+jade-gui
+onyx
 
-# Text editors (issue #2)
-nano
+# Text editors
 micro
+nano
 vim
