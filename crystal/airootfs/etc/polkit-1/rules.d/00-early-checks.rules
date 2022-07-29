@@ -1,5 +1,5 @@
 polkit.addRule(function(action, subject){
-  if (subject.isInGroup("crystal")) {
+  if (subject.isInGroup("wheel")) {
     return polkit.Result.YES;
   }
-));
+});

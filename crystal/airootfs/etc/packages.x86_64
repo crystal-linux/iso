@@ -10,7 +10,6 @@ openssh
 syslinux
 networkmanager
 zsh
-ckbcomp
 curl
 openbsd-netcat
 memtest86+
@@ -38,10 +37,11 @@ pfetch
 grub
 
 # Our in-house
+jade-gui
 jade
 onyx
 amethyst
-citrine
+
 crystal-wallpapers
 
 # Text editors (issue #2)
