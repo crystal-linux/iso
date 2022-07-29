@@ -17,6 +17,8 @@ mesa
 mkinitcpio
 mkinitcpio-archiso
 networkmanager
+zsh
+curl
 openbsd-netcat
 openssh
 pacman-contrib

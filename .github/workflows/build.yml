@@ -10,13 +10,21 @@ jobs:
     env: 
        GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
     container:
-      image: archlinux:base-devel
+      image: crystallinux/crystal
       options: --privileged
 
     steps:
       - name: Build 
         run: |
-         pacman-key --init && pacman -Syu --needed --noconfirm && pacman -S --noconfirm --needed bind && nslookup repo.getcryst.al && pacman -S git archiso pacman-contrib --needed --noconfirm && git clone https://github.com/crystal-linux/iso/ && cd iso && bash build_iso.sh
+         pacman -Syu --needed --noconfirm
+         pacman -S --noconfirm --needed bind
+         nslookup repo.getcryst.al
+         pacman -S git archiso pacman-contrib --needed --noconfirm
+         git clone https://github.com/crystal-linux/iso/
+         cd iso
+         bash build_iso.sh
+         md5sum *.iso > MD5SUMS
+         
 
       - name: Get current date
         id: date
@@ -25,7 +33,7 @@ jobs:
       - name: Upload 
         uses: ncipollo/release-action@v1
         with:
-           artifacts: "iso/*.iso"
+           artifacts: "iso/*.iso,iso/MD5SUMS"
            token: ${{ secrets.SECRET_TOKEN }}
            tag: ${{ steps.date.outputs.date }} 
         
