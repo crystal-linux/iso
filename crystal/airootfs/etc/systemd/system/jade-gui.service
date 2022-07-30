@@ -1,5 +1,5 @@
 [Unit]
-Description=Installs Jade's GUI counterpart
+Description=Installing Jade's GUI counterpart (This may take a while)
 Before=gdm.service
 
 [Service]
