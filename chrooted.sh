@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 echo "Chrooted in the new system, running as $(whoami)"
 
+# Compile GSchemas
+glib-compile-schemas /usr/share/glib-2.0/schemas
+
 # User setup
 useradd -mG wheel crystal
 usermod -p $(echo "crystal" | openssl passwd -6 -stdin) crystal
@@ -19,7 +22,6 @@ chown -R crystal:crystal /home/crystal/
 systemctl enable NetworkManager
 systemctl enable reflector
 systemctl enable gdm
-systemctl enable crystal-gschema
 
 # Hostname and Locale
 echo "crystal-live" > /etc/hostname
