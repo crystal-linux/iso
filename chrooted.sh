@@ -6,6 +6,7 @@ glib-compile-schemas /usr/share/glib-2.0/schemas
 
 # User setup
 useradd -mG wheel crystal
+usermod -c "Password: \"crystal\"" crystal
 usermod -p $(echo "crystal" | openssl passwd -6 -stdin) crystal
 usermod -p $(echo "crystal" | openssl passwd -6 -stdin) root
 chsh -s /usr/bin/zsh crystal
