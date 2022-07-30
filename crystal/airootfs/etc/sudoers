@@ -1,5 +1,4 @@
 Defaults env_keep += "PATH"
-Defaults insults
 
 root ALL=(ALL) NOPASSWD: ALL
 %wheel ALL=(ALL) NOPASSWD: ALL
