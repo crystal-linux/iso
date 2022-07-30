@@ -1,42 +1,42 @@
 # Arch packages
-archinstall
-arch-install-scripts
 arch-install-scripts
 btrfs-progs
 cowsay
 curl
+curl
 dosfstools
 edk2-shell
-firefox
-gdm
-gparted
 linux
 linux-firmware
 memtest86+
-mesa
 mkinitcpio
 mkinitcpio-archiso
 networkmanager
-zsh
-curl
 openbsd-netcat
 openssh
 pacman-contrib
 reflector
-spice-vdagent
 syslinux
 systemd-sysvcompat
 tree
 xfsprogs
-xorg
-xorg-apps
-xorg-xinit
 zsh
+zsh
+
+# GUI Target
+firefox
+gdm
+gnome
+gparted
+mesa
+spice-vdagent
+xorg
 
 # Things we're hosting
 base
 filesystem
 grub
+lsb-release
 neofetch
 pfetch
 sudo
