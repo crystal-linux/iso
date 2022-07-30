@@ -6,7 +6,7 @@ glib-compile-schemas /usr/share/glib-2.0/schemas
 
 # User setup
 useradd -mG wheel crystal
-usermod -c "Password: \"crystal\"" crystal
+usermod -c "Password // \"crystal\"" crystal
 usermod -p $(echo "crystal" | openssl passwd -6 -stdin) crystal
 usermod -p $(echo "crystal" | openssl passwd -6 -stdin) root
 chsh -s /usr/bin/zsh crystal
@@ -16,12 +16,14 @@ flatpak install -y --noninteractive /usr/share/jade-gui/jade-gui.flatpak
 
 # Desktop icon for Jade's GUI
 mkdir -p /home/crystal/Desktop
-cp /usr/share/applications/Jade.desktop /home/crystal/Desktop/Install.desktop
+cp \
+  /var/lib/flatpak/exports/share/applications/al.getcryst.jadegui.desktop \
+  /home/crystal/Desktop/Install.desktop
 chown -R crystal:crystal /home/crystal/
 
 # Services
 systemctl enable NetworkManager
-systemctl enable reflector
+systemctl enable mirrorlist
 systemctl enable gdm
 
 # Hostname and Locale
