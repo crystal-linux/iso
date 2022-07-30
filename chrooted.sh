@@ -19,6 +19,7 @@ chown -R crystal:crystal /home/crystal/
 systemctl enable NetworkManager
 systemctl enable reflector
 systemctl enable gdm
+systemctl enable crystal-gschema
 
 # Hostname and Locale
 echo "crystal-live" > /etc/hostname

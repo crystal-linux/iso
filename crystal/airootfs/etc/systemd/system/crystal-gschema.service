@@ -1,0 +1,14 @@
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+[Unit]
+Description=Builds Crystal ISO GSchemas
+Before=gdm.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/glib-compile-schemas /usr/share/glib-2.0/schemas
+
+[Install]
+WantedBy=graphical.target
