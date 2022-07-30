@@ -7,6 +7,9 @@ usermod -p $(echo "crystal" | openssl passwd -6 -stdin) crystal
 usermod -p $(echo "crystal" | openssl passwd -6 -stdin) root
 chsh -s /usr/bin/zsh crystal
 
+# Install Jade's GUI
+flatpak install -y --noninteractive /usr/share/jade-gui/jade-gui.flatpak
+
 # Desktop icon for Jade's GUI
 mkdir -p /home/crystal/Desktop
 cp /usr/share/applications/Jade.desktop /home/crystal/Desktop/Install.desktop
@@ -16,7 +19,6 @@ chown -R crystal:crystal /home/crystal/
 systemctl enable NetworkManager
 systemctl enable reflector
 systemctl enable gdm
-systemctl enable jade-gui
 
 # Hostname and Locale
 echo "crystal-live" > /etc/hostname
