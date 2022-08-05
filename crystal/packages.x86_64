@@ -21,7 +21,6 @@ systemd-sysvcompat
 tree
 xfsprogs
 zsh
-zsh
 
 # GUI Target
 firefox
@@ -46,7 +45,6 @@ amethyst
 crystal-wallpapers
 jade
 jade-gui
-onyx
 
 # Text editors
 micro
