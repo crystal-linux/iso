@@ -10,7 +10,7 @@ jobs:
     env: 
        GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
     container:
-      image: crystallinux/crystal
+      image: crystallinux/crystal:latest
       options: --privileged
 
     steps:
