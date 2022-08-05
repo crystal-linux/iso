@@ -10,10 +10,6 @@ else
     fi
 fi
 
-# Copy pacman config to the airootfs
-cp crystal/pacman.conf crystal/.
-cp crystal/packages.x86_64 crystal/.
-
 echo "Built on $(date +"%D @ %T EST")" > crystal/airootfs/etc/buildstamp
 
 time sudo ./mkarchiso -v -w $WORKDIR -o . crystal
