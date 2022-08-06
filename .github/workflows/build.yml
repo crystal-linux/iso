@@ -34,7 +34,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
            artifacts: "iso/*.iso,iso/MD5SUMS"
-           token: ${{ secrets.SECRET_TOKEN }}
+           token: ${{ secrets.GITHUB_TOKEN }}
            tag: ${{ steps.date.outputs.date }} 
         
            
