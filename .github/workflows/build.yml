@@ -10,7 +10,7 @@ jobs:
     env: 
        GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
     container:
-      image: crystallinux/crystal
+      image: ghcr.io/crystal-linux/crystal:latest
       options: --privileged
 
     steps:
@@ -34,7 +34,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
            artifacts: "iso/*.iso,iso/MD5SUMS"
-           token: ${{ secrets.SECRET_TOKEN }}
+           token: ${{ secrets.GITHUB_TOKEN }}
            tag: ${{ steps.date.outputs.date }} 
         
            

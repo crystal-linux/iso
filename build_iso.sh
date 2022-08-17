@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
+
 rm -fv *.iso
+cp crystal/pacman.conf crystal/airootfs/etc/.
 
 if [[ "$1" == "" ]]; then
     WORKDIR=$(mktemp -d)
