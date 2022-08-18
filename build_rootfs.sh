@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-rm -fv *.iso
+rm -fv *.tar.xz
 cp crystal/pacman.conf crystal/airootfs/etc/.
-cp chrooted-iso.sh chrooted.sh
+cp chrooted-bootstrap.sh chrooted.sh
 
 if [[ "$1" == "" ]]; then
     WORKDIR=$(mktemp -d)
@@ -15,7 +15,7 @@ fi
 
 echo "Built on $(date +"%D @ %T EST")" > crystal/airootfs/etc/buildstamp
 
-time sudo ./mkarchiso -v -w $WORKDIR -o . crystal
+time sudo ./mkarchiso -m bootstrap -v -w $WORKDIR -o . crystal
 
 sudo rm -rf $WORKDIR
 sudo chown $USER:$USER *.iso
