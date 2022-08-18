@@ -1,3 +1,4 @@
 *.iso
 crystal/airootfs/etc/pacman.conf
 crystal/airootfs/etc/buildstamp
+chrooted.sh

@@ -23,7 +23,10 @@ jobs:
          git clone https://github.com/crystal-linux/iso/
          cd iso
          bash build_iso.sh
-         md5sum *.iso > MD5SUMS
+         md5sum *.iso > MD5SUM-iso
+         rm chrooted.sh
+         bash build_rootfs.sh
+         md5sum *.tar.gz > MD5SUM-rootfs
          
 
       - name: Get current date
@@ -33,7 +36,7 @@ jobs:
       - name: Upload 
         uses: ncipollo/release-action@v1
         with:
-           artifacts: "iso/*.iso,iso/MD5SUMS"
+           artifacts: "iso/*.iso,iso/MD5SUM-iso,iso/*.tar.gz,iso/MD5SUM-rootfs"
            token: ${{ secrets.GITHUB_TOKEN }}
            tag: ${{ steps.date.outputs.date }} 
         
