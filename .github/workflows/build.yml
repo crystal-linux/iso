@@ -14,7 +14,8 @@ jobs:
       options: --privileged
 
     steps:
-      - name: Build 
+      - name: Build
+        id: build
         run: |
          # Set BUILD_DATE
          export BUILD_DATE=$(date +'%m-%d-%g-%H-%M')
