@@ -16,23 +16,39 @@ jobs:
     steps:
       - name: Build 
         run: |
+         # Set BUILD_DATE
+         export BUILD_DATE=$(date +'%m-%d-%g-%H-%M')
+         
+         # Make sure container is up-to-date
          pacman -Syu --needed --noconfirm
          pacman -S --noconfirm --needed bind
+         
+         # Make sure repo.getcryst.al is up
          nslookup repo.getcryst.al
+         
+         # Install necessary packages
          pacman -S git archiso pacman-contrib --needed --noconfirm
+         
+         # Clone ISO repo and enter it
          git clone https://github.com/crystal-linux/iso/
          cd iso
+         
+         # Build ISO and rename to match BUILD_DATE
          bash build.sh --build-iso
+         mv *.iso crystal-live-${BUILD_DATE}-x86_64.iso
          md5sum *.iso > MD5SUM-iso
+         
+         # Remove chrooted.sh in between operations
          rm chrooted.sh
+         
+         # Likewise, but for the rootfs
          bash build.sh --build-bootstrap
          md5sum *.tar.gz > MD5SUM-rootfs
+         mv *.tar.gz crystal-rootfs-${BUILD_DATE}-x86_64.tar.gz
          
-
-      - name: Get current date
-        id: date
-        run: echo "::set-output name=date::$(date +'%m-%d-%g-%H-%M')"
-
+         # Set upload name to BUILD_DATE
+         echo "::set-output name=date::${BUILD_DATE}"
+         
       - name: Upload 
         uses: ncipollo/release-action@v1
         with:
