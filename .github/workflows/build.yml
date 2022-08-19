@@ -35,7 +35,7 @@ jobs:
          
          # Build ISO and rename to match BUILD_DATE
          bash build.sh --build-iso
-         if [[ ! "$(ls *.iso)" == "crystal-live-${BUILD_DATE}-x86_64.iso ]]; then
+         if [[ ! "$(ls *.iso)" == "crystal-live-${BUILD_DATE}-x86_64.iso" ]]; then
              mv *.iso crystal-live-${BUILD_DATE}-x86_64.iso
          fi
          md5sum *.iso > MD5SUM-iso
