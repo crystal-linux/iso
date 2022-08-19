@@ -22,10 +22,10 @@ jobs:
          pacman -S git archiso pacman-contrib --needed --noconfirm
          git clone https://github.com/crystal-linux/iso/
          cd iso
-         bash build_iso.sh
+         bash build.sh --build-iso
          md5sum *.iso > MD5SUM-iso
          rm chrooted.sh
-         bash build_rootfs.sh
+         bash build.sh --build-bootstrap
          md5sum *.tar.gz > MD5SUM-rootfs
          
 
