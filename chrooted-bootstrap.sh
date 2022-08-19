@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 echo "Chrooted in the new system, running as $(whoami)"
 
+# Fix pacman config being put in / instead of /etc
+mv /pacman.conf /etc/pacman.conf
+
 # Mirrorlist
 reflector > /etc/pacman.d/mirrorlist
 
