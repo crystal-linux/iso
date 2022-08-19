@@ -56,6 +56,6 @@ jobs:
         with:
            artifacts: "iso/*.iso,iso/MD5SUM-iso,iso/*.tar.gz,iso/MD5SUM-rootfs"
            token: ${{ secrets.GITHUB_TOKEN }}
-           tag: ${{ steps.date.outputs.date }} 
+           tag: ${{ steps.build.outputs.date }} 
         
            
