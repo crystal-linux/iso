@@ -29,10 +29,8 @@
 You will have to use Arch or Arch-Based distros to build this ISO File.
 * Install Dependencies
 * Go to the project folder
-* Run `./build_iso.sh`
-    * If you get an error about `/tmp/<something>` running out of space, reboot (to clear tmpfs), then re-run with a dir to use as temp (e.g. `./build_iso.sh FOOBAR`)
-    * If you also add a second arg as in `./build_iso.sh /some/folder testing`, you'll pull from our testing repo
-    
+* Run `./build.sh --build-iso` to build an iso image
+* Or Run `./build.sh --build-bootstrap` to build a rootfs tarball    
 ### How to build inside of Docker or Podman:
 * The container **MUST** be ran as root to build. 
   * Other than needing to be ran as root, it should function correctly. You may need to install a few more dependencies aside from the ones listed here.

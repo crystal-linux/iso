@@ -23,12 +23,17 @@ chown -R crystal:crystal /home/crystal/
 
 # Services
 systemctl enable NetworkManager
-systemctl enable mirrorlist
 systemctl enable gdm
 
-# Hostname and Locale
+# Mirrorlist
+reflector > /etc/pacman.d/mirrorlist
+
+# Hostname
 echo "crystal-live" > /etc/hostname
+
+# Locale
 echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
-locale-gen
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
+locale-gen
+
 echo "Configured the system. Exiting chroot."
