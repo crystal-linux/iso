@@ -46,8 +46,8 @@ jobs:
          
          # Likewise, but for the rootfs
          bash build.sh --build-bootstrap
-         md5sum *.tar.gz > MD5SUM-rootfs
          mv *.tar.gz crystal-rootfs-${BUILD_DATE}-x86_64.tar.gz
+         md5sum *.tar.gz > MD5SUM-rootfs
          
          # Set upload name to BUILD_DATE
          echo "::set-output name=date::${BUILD_DATE}"
