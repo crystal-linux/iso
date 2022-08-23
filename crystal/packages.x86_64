@@ -6,6 +6,7 @@ curl
 curl
 dosfstools
 edk2-shell
+gum
 linux
 linux-firmware
 memtest86+

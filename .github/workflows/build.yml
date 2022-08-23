@@ -14,7 +14,8 @@ jobs:
       options: --privileged
 
     steps:
-      - name: Build 
+      - name: Build
+        id: build
         run: |
          # Set BUILD_DATE
          export BUILD_DATE=$(date +'%m-%d-%g-%H-%M')
@@ -35,7 +36,9 @@ jobs:
          
          # Build ISO and rename to match BUILD_DATE
          bash build.sh --build-iso
-         mv *.iso crystal-live-${BUILD_DATE}-x86_64.iso
+         if [[ ! "$(ls *.iso)" == "crystal-live-${BUILD_DATE}-x86_64.iso" ]]; then
+             mv *.iso crystal-live-${BUILD_DATE}-x86_64.iso
+         fi
          md5sum *.iso > MD5SUM-iso
          
          # Remove chrooted.sh in between operations
@@ -43,8 +46,8 @@ jobs:
          
          # Likewise, but for the rootfs
          bash build.sh --build-bootstrap
-         md5sum *.tar.gz > MD5SUM-rootfs
          mv *.tar.gz crystal-rootfs-${BUILD_DATE}-x86_64.tar.gz
+         md5sum *.tar.gz > MD5SUM-rootfs
          
          # Set upload name to BUILD_DATE
          echo "::set-output name=date::${BUILD_DATE}"
@@ -54,6 +57,6 @@ jobs:
         with:
            artifacts: "iso/*.iso,iso/MD5SUM-iso,iso/*.tar.gz,iso/MD5SUM-rootfs"
            token: ${{ secrets.GITHUB_TOKEN }}
-           tag: ${{ steps.date.outputs.date }} 
+           tag: ${{ steps.build.outputs.date }} 
         
            
