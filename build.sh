@@ -4,7 +4,7 @@ if [[ "$2" == "" ]]; then
 else
     WORKDIR="$2"
     if [[ ! -d "$WORKDIR" ]]; then
-	mkdir -p "$WORKDIR"
+	    mkdir -p "$WORKDIR"
     fi
 fi
 if [[ "$1" == "--build-iso" ]]; then
@@ -18,11 +18,11 @@ elif [[ "$1" == "--build-bootstrap" ]]; then
 else
    RESULTCODE=0
     if [[ "$1" == "" ]]; then
-	echo "no option given, available options are:"
-	RESULTCODE=1
+        echo "no option given, available options are:"
+        RESULTCODE=1
     elif [[ "$1" != "--help" ]]; then
-	echo "option '$1' not known, available options are:"
-	RESULTCODE=1
+        echo "option '$1' not known, available options are:"
+        RESULTCODE=1
     fi
     echo "--build-iso		builds a crystal linux iso"
     echo "--build-bootstrap	builds a crystal linux rootfs tarball"
