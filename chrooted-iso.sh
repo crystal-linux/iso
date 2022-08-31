@@ -25,6 +25,15 @@ chown -R crystal:crystal /home/crystal/
 systemctl enable NetworkManager
 systemctl enable gdm
 
+# Disable auto screen lock
+mkdir -p /etc/skel/.config/autostart
+echo "[Desktop Entry]
+Name=Deactive lock screen
+Comment=Deactive the gnome lock screen in the live session
+Type=Application
+Icon=nautilus
+Exec=sh -c \"gsettings set org.gnome.desktop.screensaver lock-enabled false\"" > /etc/skel/.config/autostart/no-lock-screen.desktop
+
 # Mirrorlist
 reflector > /etc/pacman.d/mirrorlist
 
