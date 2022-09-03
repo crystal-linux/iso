@@ -19,6 +19,7 @@ mkdir -p /home/crystal/Desktop
 cp \
   /var/lib/flatpak/exports/share/applications/al.getcryst.jadegui.desktop \
   /home/crystal/Desktop/Install.desktop
+
 chown -R crystal:crystal /home/crystal/
 
 # Services
@@ -26,13 +27,16 @@ systemctl enable NetworkManager
 systemctl enable gdm
 
 # Disable auto screen lock
-mkdir -p /etc/skel/.config/autostart
+mkdir -p /home/crystal/.config/autostart
 echo "[Desktop Entry]
 Name=Deactive lock screen
 Comment=Deactive the gnome lock screen in the live session
 Type=Application
 Icon=nautilus
 Exec=sh -c \"gsettings set org.gnome.desktop.screensaver lock-enabled false\"" > /etc/skel/.config/autostart/no-lock-screen.desktop
+cp \
+  /var/lib/flatpak/exports/share/applications/al.getcryst.jadegui.desktop \
+  /home/crystal/.config/autostart
 
 # Mirrorlist
 reflector > /etc/pacman.d/mirrorlist
