@@ -33,7 +33,7 @@ Name=Deactive lock screen
 Comment=Deactive the gnome lock screen in the live session
 Type=Application
 Icon=nautilus
-Exec=sh -c \"gsettings set org.gnome.desktop.screensaver lock-enabled false\"" > /etc/skel/.config/autostart/no-lock-screen.desktop
+Exec=sh -c \"gsettings set org.gnome.desktop.screensaver lock-enabled false\"" > /home/crystal/.config/autostart/no-lock-screen.desktop
 cp \
   /var/lib/flatpak/exports/share/applications/al.getcryst.jadegui.desktop \
   /home/crystal/.config/autostart
