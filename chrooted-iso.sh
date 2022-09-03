@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 echo "Chrooted in the new system, running as $(whoami)"
 
-# Compile GSchemas
-glib-compile-schemas /usr/share/glib-2.0/schemas
-
 # User setup
 useradd -mG wheel crystal
 usermod -c "Password // \"crystal\"" crystal
@@ -11,7 +8,7 @@ usermod -p $(echo "crystal" | openssl passwd -6 -stdin) crystal
 usermod -p $(echo "crystal" | openssl passwd -6 -stdin) root
 chsh -s /usr/bin/zsh crystal
 
-# Install Jade's GUI
+# Install Jade GUI
 flatpak install -y --noninteractive /usr/share/jade-gui/jade-gui.flatpak
 
 # Desktop icon for Jade's GUI
@@ -19,12 +16,6 @@ mkdir -p /home/crystal/Desktop
 cp \
   /var/lib/flatpak/exports/share/applications/al.getcryst.jadegui.desktop \
   /home/crystal/Desktop/Install.desktop
-
-chown -R crystal:crystal /home/crystal/
-
-# Services
-systemctl enable NetworkManager
-systemctl enable gdm
 
 # Disable auto screen lock
 mkdir -p /home/crystal/.config/autostart
@@ -34,9 +25,19 @@ Comment=Deactive the gnome lock screen in the live session
 Type=Application
 Icon=nautilus
 Exec=sh -c \"gsettings set org.gnome.desktop.screensaver lock-enabled false\"" > /home/crystal/.config/autostart/no-lock-screen.desktop
+
+# Jade-GUI Autostart
 cp \
   /var/lib/flatpak/exports/share/applications/al.getcryst.jadegui.desktop \
   /home/crystal/.config/autostart
+
+# Permissions for Crystal user
+chown -R crystal:crystal /home/crystal/
+chmod +x /home/crystal/.config/autostart/*.desktop
+
+# Services
+systemctl enable NetworkManager
+systemctl enable gdm
 
 # Mirrorlist
 reflector > /etc/pacman.d/mirrorlist
