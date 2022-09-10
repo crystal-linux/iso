@@ -25,7 +25,7 @@ zsh
 # GUI Target
 firefox
 gdm
-gnome
+onyx
 gparted
 mesa
 spice-vdagent
