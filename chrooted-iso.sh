@@ -26,12 +26,6 @@ Type=Application
 Icon=nautilus
 Exec=sh -c \"gsettings set org.gnome.desktop.screensaver lock-enabled false\"" > /home/crystal/.config/autostart/no-lock-screen.desktop
 
-# Set default session to Onyx
-echo "[User]
-Session=onyx
-Icon=/var/lib/AccountsService/icons/crystal
-SystemAccount=false" > /var/lib/AccountsService/users/crystal
-
 # Jade-GUI Autostart
 cp \
   /var/lib/flatpak/exports/share/applications/al.getcryst.jadegui.desktop \
@@ -42,6 +36,8 @@ chown -R crystal:crystal /home/crystal/
 chmod +x /home/crystal/.config/autostart/*.desktop
 
 # Services
+systemctl enable vmtoolsd
+systemctl enable vmware-vmblock-fuse
 systemctl enable NetworkManager
 systemctl enable gdm
 
@@ -55,5 +51,9 @@ echo "crystal-live" > /etc/hostname
 echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 locale-gen
+
+# Onyx as default gdm session
+rm /usr/share/xsessions/gnome*
+rm /usr/share/wayland-sessions/gnome*
 
 echo "Configured the system. Exiting chroot."
