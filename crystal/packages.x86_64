@@ -6,7 +6,7 @@ curl
 curl
 dosfstools
 edk2-shell
-f2fs-tools
+gtkmm3
 linux
 linux-firmware
 memtest86+
@@ -20,6 +20,8 @@ reflector
 syslinux
 systemd-sysvcompat
 tree
+virtualbox-guest-utils
+open-vm-tools
 xfsprogs
 zsh
 
