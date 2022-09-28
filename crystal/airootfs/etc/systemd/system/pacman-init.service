@@ -9,11 +9,8 @@ After=etc-pacman.d-gnupg.mount
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/bin/bash -c "echo hi"
 ExecStart=/usr/bin/pacman-key --init
 ExecStart=/usr/bin/pacman-key --populate archlinux
-ExecStart=/usr/bin/reflector --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
-ExecStart=/usr/bin/sed -i 's/#Server/Server/g' /etc/pacman.d/mirrorlist
 
 
 [Install]
