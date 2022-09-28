@@ -45,6 +45,7 @@ chmod +x /home/crystal/.config/autostart/*.desktop
 systemctl enable vmtoolsd
 systemctl enable vmware-vmblock-fuse
 systemctl enable NetworkManager
+systemctl enable reflector
 systemctl enable gdm
 
 # Mirrorlist
