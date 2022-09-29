@@ -29,7 +29,7 @@ jobs:
          nslookup repo.getcryst.al
          
          # Install necessary packages
-         pacman -S git archiso pacman-contrib rsync --needed --noconfirm
+         pacman -S git archiso pacman-contrib --needed --noconfirm
          
          # Clone ISO repo and enter it
          git clone https://github.com/crystal-linux/iso/
@@ -40,7 +40,12 @@ jobs:
          if [[ ! "$(ls *.iso)" == "crystal-live-${BUILD_DATE}-x86_64.iso" ]]; then
              mv *.iso crystal-live-${BUILD_DATE}-x86_64.iso
          fi
+         
          md5sum *.iso > MD5SUM-iso
+         
+         gzip crystal-live-${BUILD_DATE}-x86_64.iso
+         
+         md5sum *.iso.gz > MD5SUM-iso.gz
          
          # Remove chrooted.sh in between operations
          rm chrooted.sh
@@ -50,27 +55,13 @@ jobs:
          mv *.tar.gz crystal-rootfs-${BUILD_DATE}-x86_64.tar.gz
          md5sum *.tar.gz > MD5SUM-rootfs
          
-         mkdir outputs
-         mv *.tar.gz outputs/.
-         mv *.iso outputs/.
-         mv MD5SUM-* outputs/.
-         
          # Set upload name to BUILD_DATE
          echo "::set-output name=date::${BUILD_DATE}"
-      - name: Push outputs to server
-        uses: easingthemes/ssh-deploy@main
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-          #ARGS: "-rltgoDzvO"
-          SOURCE: "outputs/"
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: ${{ secrets.REMOTE_TARGET }}
       - name: Upload 
         uses: ncipollo/release-action@v1
         with:
-           body: "ISO images and tarballs can be found at https://repo.getcryst.al/isos/"
+           artifacts: "iso/*.iso.gz,iso/MD5SUM-iso*,iso/*.tar.gz,iso/MD5SUM-rootfs"
            token: ${{ secrets.GITHUB_TOKEN }}
-           tag: ${{ steps.build.outputs.date }} 
-        
+           tag: ${{ steps.build.outputs.date }}
+    
            
