@@ -50,13 +50,26 @@ jobs:
          mv *.tar.gz crystal-rootfs-${BUILD_DATE}-x86_64.tar.gz
          md5sum *.tar.gz > MD5SUM-rootfs
          
+         mkdir outputs
+         mv *.tar.gz outputs/.
+         mv *.iso outputs/.
+         mv MD5SUM-* outputs/.
+         
          # Set upload name to BUILD_DATE
          echo "::set-output name=date::${BUILD_DATE}"
-         
+      - name: Push outputs to server
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          #ARGS: "-rltgoDzvO"
+          SOURCE: "outputs/"
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          TARGET: ${{ secrets.REMOTE_TARGET }}
       - name: Upload 
         uses: ncipollo/release-action@v1
         with:
-           artifacts: "iso/*.iso,iso/MD5SUM-iso,iso/*.tar.gz,iso/MD5SUM-rootfs"
+           body: "ISO images and tarballs can be found at https://repo.getcryst.al/isos/"
            token: ${{ secrets.GITHUB_TOKEN }}
            tag: ${{ steps.build.outputs.date }} 
         
