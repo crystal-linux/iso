@@ -29,7 +29,7 @@ jobs:
          nslookup repo.getcryst.al
          
          # Install necessary packages
-         pacman -S git archiso pacman-contrib --needed --noconfirm
+         pacman -S git archiso pacman-contrib rsync --needed --noconfirm
          
          # Clone ISO repo and enter it
          git clone https://github.com/crystal-linux/iso/
