@@ -34,6 +34,7 @@ noto-fonts-cjk
 
 # Networking
 openvpn
+wireguard-tools
 
 # GUI Target
 firefox
