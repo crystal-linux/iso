@@ -8,6 +8,7 @@ curl
 dosfstools
 edk2-shell
 gtkmm3
+f2fs-tools
 linux
 linux-firmware
 memtest86+
