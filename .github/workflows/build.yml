@@ -18,7 +18,8 @@ jobs:
         id: build
         run: |
          # Set BUILD_DATE
-         export BUILD_DATE=$(date +'%m-%d-%g-%H-%M')
+         # 2022-09-29
+         export BUILD_DATE=$(date +'%Y-%m-%d')
          
          # Make sure container is up-to-date
          pacman -Syu --needed --noconfirm
