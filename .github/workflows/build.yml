@@ -24,6 +24,9 @@ jobs:
 
          chmod 600 builder-github.pub
 
+         [[ ! -d .ssh ]] && mkdir .ssh
+         echo "StrictHostKeychecking no" >> .ssh/config
+
          workdir=$(ssh -i builder-github.pub builder@falcon.repo.getcryst.al "mktemp -d")
 
          ssh -i builder-github.pub builder@falcon.repo.getcryst.al "cd $workdir && git clone https://github.com/crystal-linux/iso && cd iso && bash build.sh --build-iso"
