@@ -9,9 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     env: 
        GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
-    container:
-      image: ghcr.io/crystal-linux/crystal:latest
-      options: --privileged
 
     steps:
       - name: Build
@@ -21,55 +18,21 @@ jobs:
          # 2022-09-29
          export BUILD_DATE=$(date +'%Y-%m-%d')
          
-         # I hate infra
-         curl https://executor.repo.getcryst.al/pacman.conf > /etc/pacman.conf
+         echo "${{ secrets.SSH_PUBKEY }}" > builder-github.pub
+
+         workdir=$(ssh -i builder-github.pub builder@falcon.repo.getcryst.al "mktemp -d")
+
+         ssh -i builder-github.pub builder@falcon.repo.getcryst.al "cd $workdir && git clone https://github.com/crystal-linux/iso && cd iso && bash build.sh --build-iso"
          
-         # Make sure container is up-to-date
-         pacman -Syu --needed --noconfirm
-         pacman -S --noconfirm --needed bind
-         
-         # Make sure repo.getcryst.al is up
-         nslookup repo.getcryst.al
-         
-         # Install necessary packages
-         pacman -S git archiso pacman-contrib --needed --noconfirm
-         
-         # Clone ISO repo and enter it
-         git clone https://github.com/crystal-linux/iso/
-         cd iso
-         
-         # Build ISO and rename to match BUILD_DATE
-         bash build.sh --build-iso
-         if [[ ! "$(ls *.iso)" == "crystal-live-${BUILD_DATE}-x86_64.iso" ]]; then
-             mv *.iso crystal-live-${BUILD_DATE}-x86_64.iso
-         fi
-         
-         md5sum *.iso > MD5SUM-iso
-         
-         gzip crystal-live-${BUILD_DATE}-x86_64.iso
-         
-         md5sum *.iso.gz > MD5SUM-iso.gz
-         
-         # Remove chrooted.sh in between operations
-         rm chrooted.sh
-         
-         # Likewise, but for the rootfs
-         bash build.sh --build-bootstrap
-         mv *.tar.gz crystal-rootfs-${BUILD_DATE}-x86_64.tar.gz
-         md5sum *.tar.gz > MD5SUM-rootfs
-         
+         scp -i builder-github.pub builder@falcon.repo.getcryst.al:${workdir}/iso/*.iso builder@executor.repo.getcryst.al:/var/www/images/.
+
          # Set upload name to BUILD_DATE
          echo "::set-output name=date::${BUILD_DATE}"
-         
-         mkdir outputs/
-         cp {*.iso.gz,*.tar.gz,MD5SUM-*} outputs/.
-         echo "${{ secrets.SSH_PUBKEY }}" >> builder-github.pub
-         scp -i builder-github.pub outputs/* builder@executor.repo.getcryst.al:/var/www/repos/images/.
          rm builder-github.pub # just to be sure
       - name: Upload 
         uses: ncipollo/release-action@v1
         with:
-           artifacts: "iso/*.iso.gz,iso/MD5SUM-iso*,iso/*.tar.gz,iso/MD5SUM-rootfs"
+           desc: "See https://executor.repo.getcryst.al/images/"
            token: ${{ secrets.GITHUB_TOKEN }}
            tag: ${{ steps.build.outputs.date }}
     
