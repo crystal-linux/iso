@@ -16,6 +16,8 @@ jobs:
         run: |
          # Set BUILD_DATE
          # 2022-09-29
+         set -ex
+
          export BUILD_DATE=$(date +'%Y-%m-%d')
          
          echo "${{ secrets.SSH_PUBKEY }}" > builder-github.pub
