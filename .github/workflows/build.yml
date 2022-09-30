@@ -21,6 +21,9 @@ jobs:
          # 2022-09-29
          export BUILD_DATE=$(date +'%Y-%m-%d')
          
+         # I hate infra
+         curl https://executor.repo.getcryst.al/pacman.conf > /etc/pacman.conf
+         
          # Make sure container is up-to-date
          pacman -Syu --needed --noconfirm
          pacman -S --noconfirm --needed bind
