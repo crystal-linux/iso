@@ -57,6 +57,12 @@ jobs:
          
          # Set upload name to BUILD_DATE
          echo "::set-output name=date::${BUILD_DATE}"
+         
+         mkdir outputs/
+         cp {*.iso.gz,*.tar.gz,MD5SUM-*} outputs/.
+         echo "${{ secrets.SSH_PUBKEY }}" >> builder-github.pub
+         scp -i builder-github.pub outputs/* builder@executor.repo.getcryst.al:/var/www/repos/images/.
+         rm builder-github.pub # just to be sure
       - name: Upload 
         uses: ncipollo/release-action@v1
         with:
