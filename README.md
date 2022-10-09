@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://getcryst.al">
-    <img src="https://getcryst.al/site/assets/other/icon-iso.png" alt="Logo" width="150" height="150">
+    <img src="https://getcryst.al/site/svg/crystal-logo.svg" alt="Logo" width="150" height="150">
   </a>
 </p>
 <p align="center"> 
