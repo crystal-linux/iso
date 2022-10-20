@@ -1,9 +1,12 @@
 # Arch packages
+base
+grub
+lsb-release
+sudo
 arch-install-scripts
 archlinux-keyring
 btrfs-progs
 cowsay
-curl
 curl
 dosfstools
 edk2-shell
@@ -49,17 +52,12 @@ pipewire
 pipewire-pulse
 
 # Things we're hosting
-base
-filesystem
-grub
-lsb-release
 neofetch
-sudo
 
 # Our packages
+crystal-core
+crystal-branding
 crystal-wallpapers
-crystal-mirrorlist
-crystal-keyring
 jade
 jade-gui
 

@@ -1,4 +1,7 @@
 # Arch packages
+base
+lsb-release
+sudo
 cowsay
 curl
 openbsd-netcat
@@ -9,12 +12,11 @@ tree
 zsh
 
 # Things we're hosting
-base
-filesystem
-lsb-release
 neofetch
-pfetch
-sudo
+
+# Our packages
+crystal-core
+crystal-branding
 
 # Text editors
 micro

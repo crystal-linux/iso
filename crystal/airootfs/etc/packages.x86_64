@@ -1,3 +1,6 @@
+# Arch packages
+base
+grub
 arch-install-scripts
 reflector
 pacman-contrib
@@ -29,19 +32,14 @@ mesa
 firefox
 
 # Things we're hosting
-arch-install-scripts
-base
-filesystem
 neofetch
-pfetch
-grub
 
 # Our in-house
-jade-gui
+crystal-core
+crystal-branding
 jade
+jade-gui
 onyx
-ame
-
 crystal-wallpapers
 
 # Text editors (issue #2)
