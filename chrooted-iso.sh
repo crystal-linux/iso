@@ -8,14 +8,9 @@ usermod -p $(echo "crystal" | openssl passwd -6 -stdin) crystal
 usermod -p $(echo "crystal" | openssl passwd -6 -stdin) root
 chsh -s /usr/bin/zsh crystal
 
-# Install Jade GUI
-flatpak install -y --noninteractive /usr/share/jade-gui/jade-gui.flatpak
-
 # Desktop icon for Jade's GUI
 mkdir -p /home/crystal/Desktop
-cp \
-  /var/lib/flatpak/exports/share/applications/al.getcryst.jadegui.desktop \
-  /home/crystal/Desktop/Install.desktop
+cp /usr/share/applications/al.getcryst.jadegui.desktop /home/crystal/Desktop/Install.desktop
 
 # Disable auto screen lock
 mkdir -p /home/crystal/.config/autostart
@@ -33,9 +28,7 @@ Icon=/var/lib/AccountsService/icons/crystal
 SystemAccount=false" > /var/lib/AccountsService/users/crystal
 
 # Jade-GUI Autostart
-cp \
-  /var/lib/flatpak/exports/share/applications/al.getcryst.jadegui.desktop \
-  /home/crystal/.config/autostart
+cp /usr/share/applications/al.getcryst.jadegui.desktop /home/crystal/.config/autostart
 
 # Permissions for Crystal user
 chown -R crystal:crystal /home/crystal/
