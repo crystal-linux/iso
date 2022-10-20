@@ -41,10 +41,6 @@ jobs:
          
          md5sum *.iso > MD5SUM-iso
          
-         gzip crystal-live-${BUILD_DATE}-x86_64.iso
-         
-         md5sum *.iso.gz > MD5SUM-iso.gz
-         
          # Remove chrooted.sh in between operations
          rm chrooted.sh
          
@@ -58,7 +54,7 @@ jobs:
       - name: Upload 
         uses: ncipollo/release-action@v1
         with:
-           artifacts: "iso/*.iso.gz,iso/MD5SUM-iso*,iso/*.tar.gz,iso/MD5SUM-rootfs"
+           artifacts: "iso/*.iso,iso/MD5SUM-iso*,iso/*.tar.gz,iso/MD5SUM-rootfs"
            token: ${{ secrets.GITHUB_TOKEN }}
            tag: ${{ steps.build.outputs.date }}
     
