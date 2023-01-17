@@ -18,6 +18,10 @@
     <a href="https://twitter.com/crystal_linux"><img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/crystal_linux"></a>
 </p>
 
+<h2 align="center"> Important </h2>
+<p align="center"> Since we migrated to <a href="https://git.getcryst.al/crystal">our own GitLab instance</a>, the ISOs are now released there.<br>
+The latest ISO is available <a href="https://git.getcryst.al/crystal/misc/iso/-/releases/permalink/latest">here</a>. </p>
+
 <p align="center"> Build or download the Arch-based Crystal Linux iso. </p>
 
 ## Dependencies:
